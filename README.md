@@ -1,2 +1,5 @@
-# LunchChart
-LunchCahrt ( lunchchart.com )
+# LunchChart ( lunchchart.com )
+
+ - Node.js
+ - Express
+ - Mongoose
