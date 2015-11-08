@@ -1,7 +1,7 @@
-# LunchChart ( lunchchart.com )
+# LunchChart ( lunchchart.com ) - MEAN Stack
 
- - Node.js
+ - Mongoose ( Mongo DB )
  - Express
- - Mongoose
  - Angular.js
+ - Node.js
 
