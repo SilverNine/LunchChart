@@ -30,7 +30,7 @@ module.exports = function(app) {
 
     app.delete('/api/restaurants/:id', function(req, res){
         Restaurant.remove({
-            _id : req.param.id
+            _id : req.params.id
         }, function(err, restaurant){
             if(err){
                 res.send(err);
