@@ -16,6 +16,7 @@
     "connect": "*",
     "mongoose": "*",
     "request": "*",
-    "cheerio": "*"
+    "cheerio": "*",
+    "method-override": "~2.1.2"
   }
 }
