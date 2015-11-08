@@ -9,8 +9,6 @@ var mongoose = require('mongoose');
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
 var app = express();
 var database = require(path.join(__dirname,'config','database'));
-require(path.join(__dirname,'routes','routes'))(app);
-require(path.join(__dirname,'routes','lottos'))(app);
 
 // config
 mongoose.connect(database.url);
@@ -27,6 +25,9 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse applica
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('X-HTTP-Method-Override'));
+
+require(path.join(__dirname,'routes','routes'))(app);
+require(path.join(__dirname,'routes','lottos'))(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
