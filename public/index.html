@@ -1,10 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html ng-app="lunchchart">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <title>Lunch Chart</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous"><!-- load bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script><!-- load angular -->
+    <script src="javascript/controller/chartController.js"></script>
+    <script src="javascript/service/chartService.js"></script>
+    <script src="javascript/core.js"></script>
+
+</head>
+<body ng-controller="chartController">
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1>Restaurant Count <span class="label label-info">{{ restaurants.length }}</span></h1>
+    </div>
+
+    <div id="todo-list" class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <div class="checkbox" ng-repeat="restaurant in restaurants">
+                <label>
+                    <input type="checkbox" ng-click="deleteRestaurant(restaurant._id)"> {{ restaurant.name }}
+                </label>
+            </div>
+
+            <p class="text-center" ng-show="loading">
+                <span class="fa fa-spinner fa-spin fa-3x"></span>
+            </p>
+        </div>
+    </div>
+
+    <div id="restaurant-form" class="row">
+        <div class="col-sm-8 col-sm-offset-2 text-center">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control input-lg text-center" placeholder="Restaurant Name" ng-model="formData.name">
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg" ng-click="createRestaurant()">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>
