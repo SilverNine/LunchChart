@@ -1,4 +1,4 @@
-angular.module('chartService', []).factory('Restaurants', ['$http',function($http) {
+angular.module('chartService',[]).factory('Restaurants', ['$http',function($http) {
     return {
         get : function() {
             return $http.get('/api/restaurants');

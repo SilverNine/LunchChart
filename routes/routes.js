@@ -1,5 +1,5 @@
-var Restaurant = require("./models/restaurant");
 var path = require('path');
+var Restaurant = require(path.join(__dirname,'models','restaurant'));
 
 function getRestaurants(res) {
     Restaurant.find(function(err, restaurants){
@@ -40,7 +40,7 @@ module.exports = function(app) {
         });
     });
 
-    app.get('*', function(req, res){
+    app.get('/', function(req, res){
         res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
     });
 }

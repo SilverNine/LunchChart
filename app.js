@@ -8,13 +8,9 @@ var bodyParser = require('body-parser'); // pull information from HTML POST (exp
 var mongoose = require('mongoose');
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
 var app = express();
-var database = require('./config/database');
-
-// routes
-// common
-require("./routes/routes.js")(app);
-// lotto
-require("./routes/lottos.js")(app);
+var database = require(path.join(__dirname,'config','database'));
+require(path.join(__dirname,'routes','routes'))(app);
+require(path.join(__dirname,'routes','lottos'))(app);
 
 // config
 mongoose.connect(database.url);

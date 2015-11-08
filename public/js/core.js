@@ -1,1 +1,1 @@
-angular.module('lunchchart', ['chartController', 'chartService']);
+angular.module('lunchchart',['chartController','chartService']);
