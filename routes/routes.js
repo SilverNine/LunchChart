@@ -1,4 +1,4 @@
-var Restaurant = require("./model/restaurant");
+var Restaurant = require("./models/restaurant");
 var path = require('path');
 
 function getRestaurants(res) {
