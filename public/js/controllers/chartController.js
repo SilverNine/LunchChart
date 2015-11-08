@@ -1,4 +1,4 @@
-angular.module('chartController', []).controller('chartController', ['$scope','$http','Restaurants', function($scope, $http, Restaurants) {
+angular.module('chartController', []).controller('main', ['$scope','$http','Restaurants', function($scope, $http, Restaurants) {
     $scope.formData = {};
     $scope.loading = true;
 
