@@ -1,4 +1,5 @@
-# LunchChart ( lunchchart.com ) - MEAN Stack
+# LunchChart - MEAN Stack
+# lunchchart.com
 
  - Mongoose ( Mongo DB )
  - Express

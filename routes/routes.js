@@ -1,4 +1,4 @@
-var Restaurant = require("./model/restaurant");
+var Restaurant = require("./model/Restaurant");
 
 function getRestaurants(res) {
     Restaurant.find(function(err, restaurants){
