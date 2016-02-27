@@ -8,7 +8,16 @@ module.exports = function(app) {
 
     app.get('/pray/pray_list', function(req, res){
         mysql.getConnection(function(err,connection){
-            var query = connection.query('SELECT * FROM PRAY', function (err, rows) {
+            var query = connection.query(
+                'SELECT' +
+                ' PRAY_NO' +
+                ',PRAY_TITLE' +
+                ',PRAY_CONTENT' +
+                ',USE_YN' +
+                ',DATE_FORMAT(RDATE,\'%Y-%m-%d\') AS RDATE' +
+                ',DATE_FORMAT(MDATE,\'%Y-%m-%d\') AS MDATE' +
+                ' FROM PRAY'
+                , function (err, rows) {
                 if(err){
                     connection.release();
                     throw err;
