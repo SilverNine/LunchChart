@@ -17,6 +17,7 @@
     "mongoose": "*",
     "request": "*",
     "cheerio": "*",
-    "method-override": "~2.1.2"
+    "method-override": "~2.1.2",
+    "mysql": "*"
   }
 }
