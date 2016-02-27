@@ -10,9 +10,9 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-    <script src="js/core.js"></script>
-    <script src="js/controllers/prayController.js"></script>
-    <script src="js/services/prayService.js"></script>
+    <script src="../js/core.js"></script>
+    <script src="../js/controllers/prayController.js"></script>
+    <script src="../js/services/prayService.js"></script>
     <script>
         $( document ).ready(function() {
         });
@@ -53,15 +53,22 @@
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>기도제목</th>
-                        <th>사용여부</th>
-                        <th>등록일</th>
-                        <th>수정일</th>
-                    </tr>
+                        <tr>
+                            <th>#</th>
+                            <th>기도제목</th>
+                            <th>사용여부</th>
+                            <th>등록일</th>
+                            <th>수정일</th>
+                        </tr>
                     </thead>
                     <tbody>
+                        <tr ng-repeat="pray in prays">
+                            <td>{{pray.PRAY_NO}}</td>
+                            <td>{{pray.PRAY_TITLE}}</td>
+                            <td>{{pray.USE_YN}}</td>
+                            <td>{{pray.RDATE}}</td>
+                            <td>{{pray.MDATE}}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
