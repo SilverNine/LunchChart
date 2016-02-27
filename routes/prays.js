@@ -23,7 +23,7 @@ module.exports = function(app) {
 
     app.post('/pray/login', function(req, res){
         //console.log(req);
-        console.log(req.body);
+        //console.log(req.body);
         if(req.body.id == 'admin' || req.body.password == 'admin1234') {
             res.sendFile(path.join(__dirname, '..', 'public', 'pray', 'pray_list.html'));
         } else {
