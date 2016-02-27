@@ -1,12 +1,5 @@
 var path = require('path');
-var mysql = require('mysql');
-
-var pool = mysql.createPool({
-    host: 'lunchchart.com',
-    user: 'dev',
-    password: 'roqkfxla',
-    database: 'SILVERNINE'
-});
+var mysql = require(path.join(__dirname,'..','config','database')).pool;
 
 module.exports = function(app) {
     app.get('/pray', function(req, res){
@@ -14,11 +7,10 @@ module.exports = function(app) {
     });
 
     app.get('/pray/pray_list', function(req, res){
-        pool.getConnection(function(err,connection){
+        mysql.getConnection(function(err,connection){
             var query = connection.query('SELECT * FROM PRAY', function (err, rows) {
                 if(err){
                     connection.release();
-                    console.log(err);
                     throw err;
                 }
                 //console.log(rows);
