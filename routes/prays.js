@@ -1,5 +1,5 @@
-var mysql = require('../config/database').pool;
 var path = require('path');
+var mysql = require(path.join(__dirname,'..','config','database')).pool;
 
 module.exports = function(app) {
     app.get('/pray', function(req, res){
