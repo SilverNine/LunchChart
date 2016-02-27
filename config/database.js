@@ -1,7 +1,7 @@
 var mysql = require('mysql');
 
 var pool = mysql.createPool({
-    host: 'lunchchart.com',
+    host: 'localhost',
     user: 'dev',
     password: 'roqkfxla',
     database: 'SILVERNINE'
