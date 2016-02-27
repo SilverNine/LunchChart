@@ -11,13 +11,14 @@ module.exports = function(app) {
             var query = connection.query('SELECT * FROM PRAY', function (err, rows) {
                 if(err){
                     connection.release();
+                    console.log(err);
                     throw err;
                 }
-                //console.log(rows);
+                console.log(rows);
                 res.json(rows);
                 connection.release();
             });
-            //console.log(query);
+            console.log(query);
         });
     });
 
