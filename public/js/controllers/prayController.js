@@ -6,4 +6,29 @@ angular.module('prayController',[]).controller('main', ['$scope','$http','Prays'
         $scope.prays = data;
         $scope.loading = false;
     });
+
+    $scope.goMenu = function(menu) {
+        $scope.loading = true;
+
+        $("li[id^='list_']").removeClass("active");
+        $("#list_"+menu).addClass("active");
+
+        if(menu === 'pray') {
+            Prays.get().success(function(data) {
+                $scope.prays = data;
+                $scope.loading = false;
+            });
+
+            $("#pray_today_table").hide();
+            $("#pray_table").show();
+        } else {
+            Prays.getToday().success(function(data) {
+                $scope.pray_today_words = data;
+                $scope.loading = false;
+            });
+
+            $("#pray_table").hide();
+            $("#pray_today_table").show();
+        }
+    };
 }]);

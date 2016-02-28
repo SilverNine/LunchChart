@@ -16,7 +16,8 @@ module.exports = function(app) {
                 ',USE_YN' +
                 ',DATE_FORMAT(RDATE,\'%Y-%m-%d\') AS RDATE' +
                 ',DATE_FORMAT(MDATE,\'%Y-%m-%d\') AS MDATE' +
-                ' FROM PRAY'
+                ' FROM PRAY' +
+                ' ORDER BY RDATE DESC'
                 , function (err, rows) {
                 if(err){
                     connection.release();
@@ -26,6 +27,31 @@ module.exports = function(app) {
                 res.json(rows);
                 connection.release();
             });
+            //console.log(query);
+        });
+    });
+
+    app.get('/pray/pray_today_list', function(req, res){
+        mysql.getConnection(function(err,connection){
+            var query = connection.query(
+                'SELECT' +
+                ' WORD_NO' +
+                ',WORD_CONTENT' +
+                ',WORD_DATE' +
+                ',WORD_WHERE' +
+                ',DATE_FORMAT(RDATE,\'%Y-%m-%d\') AS RDATE' +
+                ',DATE_FORMAT(MDATE,\'%Y-%m-%d\') AS MDATE' +
+                ' FROM PRAY_TODAY_WORD' +
+                ' ORDER BY RDATE DESC'
+                , function (err, rows) {
+                    if(err){
+                        connection.release();
+                        throw err;
+                    }
+                    //console.log(rows);
+                    res.json(rows);
+                    connection.release();
+                });
             //console.log(query);
         });
     });
