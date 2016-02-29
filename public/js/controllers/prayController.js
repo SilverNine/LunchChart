@@ -31,4 +31,21 @@ angular.module('prayController',[]).controller('main', ['$scope','$http','Prays'
             $("#pray_today_table").show();
         }
     };
+
+    $scope.goDetail = function(index, menu) {
+        if(menu === 'pray') {
+
+        } else {
+
+        }
+
+        $('form').attr("action", "/pray/pray_detail");
+        $('form').submit();
+    };
+
+    $scope.logout = function() {
+        $('form').attr("method", "get");
+        $('form').attr("action", "/pray");
+        $('form').submit();
+    };
 }]);

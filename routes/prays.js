@@ -57,12 +57,15 @@ module.exports = function(app) {
     });
 
     app.post('/pray/login', function(req, res){
-        //console.log(req);
-        //console.log(req.body);
+        //temporarily
         if(req.body.id == 'admin' || req.body.password == 'admin1234') {
             res.sendFile(path.join(__dirname, '..', 'public', 'pray', 'pray_list.html'));
         } else {
             res.sendFile(path.join(__dirname, '..', 'public', 'pray', 'login.html'));
         }
+    });
+
+    app.post('/pray/pray_detail', function(req, res){
+        res.sendFile(path.join(__dirname, '..', 'public', 'pray', 'pray_detail.html'));
     });
 }

@@ -35,7 +35,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">로그아웃</a></li>
+                <li><a href="#" ng-click="logout()">로그아웃</a></li>
             </ul>
         </div>
     </div>
@@ -63,7 +63,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="pray in prays">
+                        <tr ng-click="goDetail('{{pray.PRAY_NO}}', 'pray')" ng-repeat="pray in prays">
                             <td>{{pray.PRAY_NO}}</td>
                             <td>{{pray.PRAY_TITLE}}</td>
                             <td>{{pray.USE_YN}}</td>
@@ -85,7 +85,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr ng-repeat="word in pray_today_words">
+                    <tr ng-click="goDetail('{{word.WORD_NO}}', 'pray_today')" ng-repeat="word in pray_today_words">
                         <td>{{word.WORD_NO}}</td>
                         <td>{{word.WORD_CONTENT}}</td>
                         <td>{{word.WORD_DATE}}</td>
