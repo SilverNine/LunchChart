@@ -10,27 +10,42 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>
         $( document ).ready(function() {
+            var isMobile = false;
+            var filter = "win16|win32|win64|mac";
+
+            if(navigator.platform){
+                if(0 > filter.indexOf(navigator.platform.toLowerCase())){
+                    isMobile = true;
+                }
+            }
+
             $("#btnHighlight1").click(function(){
+                $("#playTitle").html("5초 ~ 10초 재생 <br/>( 모바일의 경우 영상의 플레이 버튼을 클릭 / PC는 자동재생 됩니다. )");
                 $('#videoFrame').attr('src', "https://www.youtube.com/embed/dOITt385GZw?autohide=1&controls=0&autoplay=1&start=5&end=10");
             });
 
             $("#btnHighlight2").click(function(){
+                $("#playTitle").html("15초 ~ 20초 재생 <br/>( 모바일의 경우 영상의 플레이 버튼을 클릭 / PC는 자동재생 됩니다. )");
                 $('#videoFrame').attr('src', "https://www.youtube.com/embed/dOITt385GZw?autohide=1&controls=0&autoplay=1&start=15&end=20");
             });
 
             $("#btnHighlight3").click(function(){
+                $("#playTitle").html("25초 ~ 30초 재생 <br/>( 모바일의 경우 영상의 플레이 버튼을 클릭 / PC는 자동재생 됩니다. )");
                 $('#videoFrame').attr('src', "https://www.youtube.com/embed/dOITt385GZw?autohide=1&controls=0&autoplay=1&start=25&end=30");
             });
 
             $("#btnHighlight4").click(function(){
+                $("#playTitle").html("35초 ~ 40초 재생 <br/>( 모바일의 경우 영상의 플레이 버튼을 클릭 / PC는 자동재생 됩니다. )");
                 $('#videoFrame').attr('src', "https://www.youtube.com/embed/dOITt385GZw?autohide=1&controls=0&autoplay=1&start=35&end=40");
             });
 
             $("#btnHighlight5").click(function(){
+                $("#playTitle").html("45초 ~ 50초 재생 <br/>( 모바일의 경우 영상의 플레이 버튼을 클릭 / PC는 자동재생 됩니다. )");
                 $('#videoFrame').attr('src', "https://www.youtube.com/embed/dOITt385GZw?autohide=1&controls=0&autoplay=1&start=45&end=50");
             });
 
             $("#btnHighlight6").click(function(){
+                $("#playTitle").html("55초 ~ 60초 재생 <br/>( 모바일의 경우 영상의 플레이 버튼을 클릭 / PC는 자동재생 됩니다. )");
                 $('#videoFrame').attr('src', "https://www.youtube.com/embed/dOITt385GZw?autohide=1&controls=0&autoplay=1&start=55&end=60");
             });
         });
@@ -48,10 +63,12 @@
     </div>
 
     <div class="jumbotron" style="padding-left:0; padding-right:0; padding-top:10px; padding-bottom:10px">
+        <p id="playTitle">재생시간 : </p>
         <iframe id="videoFrame" width="640" height="360" src="https://www.youtube.com/embed/dOITt385GZw?autohide=1&controls=0" frameborder="0" allowfullscreen></iframe>
     </div>
 
     <div class="row marketing">
+        <div><p style="color:red"><b>모바일(chrome, safari)</b> 에서는 아래 버튼 클릭 후 영상의 플레이 버튼을 클릭하시면 해당 부분이 재생됩니다.</p></div>
         <div class="col-lg-6">
             <h4>highlight 1</h4>
             <p><a class="btn btn-primary" id="btnHighlight1" href="#" role="button">click to play</a></p>
