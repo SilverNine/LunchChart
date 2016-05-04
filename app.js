@@ -30,6 +30,7 @@ require(path.join(__dirname,'routes','routes'))(app);
 require(path.join(__dirname,'routes','lottos'))(app);
 require(path.join(__dirname,'routes','prays'))(app);
 require(path.join(__dirname,'routes','highlight'))(app);
+require(path.join(__dirname,'routes','oneshop'))(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
