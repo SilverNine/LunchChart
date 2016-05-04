@@ -17,11 +17,9 @@ exports.list = function(req, res){
                   ,title : $(this).find("dt").text()
                   ,price : $(this).find("em").text()
               };
-              console.log($(this).attr("href"));
               bodyContent.push(goods);
           });
 
-        //console.log(bodyContent);
         res.header('Content-Type','application/json');
         res.jsonp({goodList : bodyContent});
   });
