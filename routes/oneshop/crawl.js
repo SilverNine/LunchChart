@@ -21,6 +21,6 @@ exports.list = function(req, res){
           });
 
         res.header('Content-Type','application/json');
-        res.jsonp({goodList : bodyContent});
+        res.jsonp({goodsList : bodyContent});
   });
 };
