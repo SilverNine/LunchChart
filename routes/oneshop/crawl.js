@@ -10,7 +10,7 @@ exports.list = function(req, res){
 
         var $ = cheerio.load(body);
 
-          $(".good_list > li > a").each(function(i) {
+          $(".uniformShop > .good_list > li > a").each(function(i) {
               var goods = {
                   link : $(this).attr("href")
                   ,imagePath : "http://www.oneshop.co.kr/" + $(this).find("img").attr("src")
