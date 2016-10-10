@@ -15,7 +15,7 @@ mongoose.connect(database.url);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'ejs');
 app.set("jsonp callback", true);
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
@@ -33,6 +33,7 @@ require(path.join(__dirname,'routes','prays'))(app);
 require(path.join(__dirname,'routes','selected'))(app);
 require(path.join(__dirname,'routes','highlight'))(app);
 require(path.join(__dirname,'routes','oneshop'))(app);
+require(path.join(__dirname,'routes','lunchchart'))(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
