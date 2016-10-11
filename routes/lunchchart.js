@@ -3,6 +3,8 @@ module.exports = function(app) {
 
         var mapkey = "";
 
+        console.log(process.env.NODE_ENV);
+
         if( process.env.NODE_ENV == 'production' ) {
             mapkey = "ZsJ3ILQMDIbSGASTvqJI";
         } else {
