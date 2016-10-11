@@ -24,7 +24,7 @@
 					<!-- Logo -->
 						<div id="logo">
 							<span class="image avatar48"><img src="/lunchchart/images/gameone.png" alt="" /></span>
-							<h1 id="title">Gameone Communications</h1>
+							<h1 id="title">Gameone</h1>
 							<p>Sports Only ONE!</p>
 						</div>
 
@@ -44,7 +44,8 @@
 
 							-->
 							<ul>
-                                <li><a href="#lunchmap" id="lunchmap-link" class="skel-layers-ignoreHref"><span class="icon fa-map">Map</span></a></li>
+								<li><a href="#lunchmap" id="lunchmap-link" class="skel-layers-ignoreHref"><span class="icon fa-map">Lunch Map</span></a></li>
+								<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
 							</ul>
 						</nav>
 
@@ -66,13 +67,31 @@
 			</div>
 
 		<!-- Main -->
-			<div id="main">
+		<div id="main">
 
-                <!-- Map -->
-                <section id="lunchmap" class="">
-                </section>
+			<!-- About Me -->
+			<section id="lunchmap" class="three">
+				<div class="container">
 
-			</div>
+					<header>
+						<h2>Lunch Map</h2>
+					</header>
+
+					<p><div id="map" style="height:500px;"/></p>
+				</div>
+			</section>
+
+			<!-- Contact -->
+			<section id="contact" class="four">
+				<div class="container">
+
+					<header>
+						<h2>작업중</h2>
+					</header>
+
+				</div>
+			</section>
+		</div>
 
 		<!-- Footer -->
 			<div id="footer">
@@ -92,21 +111,22 @@
     <script src="/lunchchart/assets/js/skel.min.js"></script>
     <script src="/lunchchart/assets/js/util.js"></script>
     <!--[if lte IE 8]><script src="/lunchchart/assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="/lunchchart/assets/js/main.js"></script>
 
-    <script type="text/javascript">
 
-        var map;
-        function initMap() {
-            console.log("1");
-            map = new google.maps.Map(document.getElementById('lunchmap'), {
-                center: {lat: -34.397, lng: 150.644},
-                zoom: 8
-            });
-        }
 
-    </script>
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVUbrY2cOrYZjqyXwim4h4wV7ZF5wJX0A&callback=initMap">
-    </script>
+	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=<%= mapkey %>"></script>
 
+	<script type="text/javascript">
+		/*
+		운영 : ZsJ3ILQMDIbSGASTvqJI
+		개발 : Z343bXpadHrn2C7KXBUp
+		*/
+		var mapOptions = {
+			center: new naver.maps.LatLng(37.483740, 127.121140),
+			zoom: 12
+		}
+
+		var map = new naver.maps.Map('map', mapOptions);
+	</script>
 </html>
