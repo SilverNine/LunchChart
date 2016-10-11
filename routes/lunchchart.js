@@ -3,8 +3,6 @@ module.exports = function(app) {
 
         var mapkey = "";
 
-        console.log(process.env.NODE_ENV);
-
         if( process.env.NODE_ENV == 'production' ) {
             mapkey = "ZsJ3ILQMDIbSGASTvqJI";
         } else {
@@ -16,7 +14,7 @@ module.exports = function(app) {
          개발 : Z343bXpadHrn2C7KXBUp
          */
 
-        res.render('lunchchart/index', {mapkey : "Z343bXpadHrn2C7KXBUp"});
+        res.render('lunchchart/index', {mapkey : mapkey});
     });
 
     app.get('/sample', function(req, res){
